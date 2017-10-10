@@ -31,12 +31,14 @@
         }
         
         function click_handler(event) {
+          //  clear the main window
           var m = document.getElementById("main");
           while (m.firstChild) {
             m.removeChild(m.firstChild);
-          }            
-          var script = document.createElement('script');
+          }
             
+          console.log(event.target)
+          var script = document.createElement('script');
           script.src = "posts/pymkdir.json";
             
           script.onload = function () {
