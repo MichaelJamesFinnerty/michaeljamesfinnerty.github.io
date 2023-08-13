@@ -27,8 +27,10 @@
         window.addEventListener("DOMContentLoaded", load_handler);
         
         function load_handler() {
-            document.getElementById("next_button").addEventListener("click", click_handler, false);            
+            var button = document.getElementById("next_button").addEventListener("click", click_handler, false);            
         }
+        
+        
         
         function click_handler(event) {
           //  clear the main window
@@ -37,7 +39,6 @@
             m.removeChild(m.firstChild);
           }
             
-          console.log(event.target)
           var script = document.createElement('script');
           script.src = "posts/pymkdir.json";
             
