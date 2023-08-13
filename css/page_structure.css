@@ -4,7 +4,7 @@
     height: 20vh;
     min-height: 130px;
     z-index: 1;
-    border-bottom: 1px solid snow;
+    border-bottom: 2vh solid snow;
 }
 
 #headway img {
@@ -24,11 +24,13 @@
 #main {
     position: relative;
     top: 25vh;
-    padding-bottom: 3vh !important;
+    padding-top: 7vh !important;
+    padding-bottom: 7vh !important;
+    
 }
 
 #main > h1 {
-    margin-top: 10vh;
+    /*margin-top: 5vh;*/
 }
 
 
@@ -38,7 +40,7 @@
 
 #footer {
     position: relative;
-    top: 26vh;
+    top: 27vh;
 }
 
 
