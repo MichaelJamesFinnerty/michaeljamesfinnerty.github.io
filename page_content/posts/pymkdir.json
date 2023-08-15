@@ -1,4 +1,4 @@
-pymkdir_data = `[
+post_data = `[
     {
     "Publication Announcement: pymkdir":"<img src='img/pymkdr_logo.png' id='next_button'>",
        "#1":["Announcing the initial publication (currently through github, and soon via pip) of the pymkdir program and module for python.",

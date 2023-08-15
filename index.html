@@ -13,58 +13,54 @@
 </head>
 
 <body>
-    <div id="headway">
+    <div id="headway" class="section">
     </div>
     
-    <div id="main">
+    <div id="main" class="section">
     </div>            
     
-    <div id="footer">
+    <div id="footer" class="section">
     </div>
     
     <script>
         
-        window.addEventListener("DOMContentLoaded", load_handler);
+        
         
         function load_handler() {
-            var button = document.getElementById("next_button").addEventListener("click", click_handler, false);            
+          var next_buttons    =   document.getElementsByClassName("article_button");
+          for (var i = 0; i < next_buttons.length; i++) {
+            var b = next_buttons.item(i);
+            b.addEventListener("click", article_click_handler, false);
+          }
         }
         
-        
-        
-        function click_handler(event) {
+        function article_click_handler(event) {
+            
+          //  pull article name from button
+          var article_name = this.id;
+            
           //  clear the main window
           var m = document.getElementById("main");
           while (m.firstChild) {
             m.removeChild(m.firstChild);
           }
             
+          //  load the selected article into the main window
           var script = document.createElement('script');
-          script.src = "page_content/posts/pymkdir.json";
-            
+          script.src = `page_content/posts/${article_name}.json`;
           script.onload = function () {
-            fnpress(JSON.parse(pymkdir_data), "main");
+            fnpress(JSON.parse(post_data), "main");
           };
-            
           document.head.appendChild(script);
+            
         }
         
-      /*
-      var hjson = JSON.parse(header_data);
-      var z = Object.keys(hjson[0]);
+        window.addEventListener("DOMContentLoaded", load_handler);
+        //initial load of each section
+        fnpress(JSON.parse(header_data), "headway");
+        fnpress(JSON.parse(post_data), "main");
+        fnpress(JSON.parse(footer_data), "footer");
         
-      for (f in z) {
-          if (f==="0") {
-            fnpress(JSON.parse('{' + JSON.stringify(z[f]) + ':""}'), "headway");
-          } else {
-            fnpress(JSON.parse('{' + JSON.stringify(z[f]) + ':""}'));
-          }
-      }
-      */
-        
-      fnpress(JSON.parse(header_data), "headway");
-      fnpress(JSON.parse(index_data), "main");
-      fnpress(JSON.parse(footer_data), "footer");
     </script>
    
 </body>
