@@ -87,7 +87,7 @@ function fnparse(o) {
         
       var key = Object.keys(o.fnjson)[k];
 
-      console.log(Array(o.indt).join("\t"), key);
+      //console.log(Array(o.indt).join("\t"), key);
         
       // write the key as a heading element
       if (key.length > 3 || key[0] !== "#") {
